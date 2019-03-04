@@ -1,0 +1,1 @@
+{ "fileMD5" : { "BlockData.xlsx" : "166dd87f947b3910552613fb537b876a", "PlayerData.xlsx" : "67f12b9c0d389a6d5c6f1a2cb82fc84e", "PropData.xlsx" : "1822bf8dc76d4523ab8d042caadf8801", "SkillData.xlsx" : "6e21571b3ba27ddb2d37035a95bc6b7a", "SnakeData.xlsx" : "eaaa58fa466cd84cf6b6162c12827fd6", "WeaponData.xlsx" : "354e80cd19155c047afdb3faa1da3661" } }

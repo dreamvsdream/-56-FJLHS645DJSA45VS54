@@ -1,0 +1,4 @@
+{"index":1,"Name":"超级蛇头","IsDurationEffect":true,"HeadAttackGain":1,"BulletAttackGain":0,"DurationTime":1,"SpecialEffect":0}
+{"index":2,"Name":"超级子弹","IsDurationEffect":true,"HeadAttackGain":0,"BulletAttackGain":1,"DurationTime":1,"SpecialEffect":0}
+{"index":3,"Name":"超级导弹","IsDurationEffect":true,"HeadAttackGain":0,"BulletAttackGain":0,"DurationTime":1,"SpecialEffect":3}
+{"index":4,"Name":"防护罩","IsDurationEffect":true,"HeadAttackGain":0,"BulletAttackGain":0,"DurationTime":1,"SpecialEffect":4}

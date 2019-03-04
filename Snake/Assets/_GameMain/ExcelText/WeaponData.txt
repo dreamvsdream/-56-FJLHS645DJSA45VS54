@@ -1,0 +1,3 @@
+{"index":1,"Name":"发射球","AttackMore":50,"AttackType":1}
+{"index":2,"Name":"发射激光","AttackMore":-50,"AttackType":2}
+{"index":3,"Name":"散射球","AttackMore":10,"AttackType":3}

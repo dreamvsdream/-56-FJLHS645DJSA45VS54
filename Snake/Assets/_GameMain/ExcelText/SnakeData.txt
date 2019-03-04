@@ -1,0 +1,2 @@
+{"index":1,"Life":1,"HeadAttack":1,"BulletAttack":1,"MovementSpeed":1}
+{"index":2,"Life":1,"HeadAttack":1,"BulletAttack":1,"MovementSpeed":1}
