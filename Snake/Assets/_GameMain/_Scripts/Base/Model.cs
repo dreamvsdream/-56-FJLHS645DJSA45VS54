@@ -17,7 +17,6 @@
 #endregion
 namespace GameMain.View
 {
-
 	/// <summary>
 	/// MVP中的M
 	/// </summary>
