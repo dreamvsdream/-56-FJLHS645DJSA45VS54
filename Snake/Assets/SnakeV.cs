@@ -26,4 +26,5 @@ public class SnakeV : MonoBehaviour
 		skillTwo = skillTwo.GetComponentFromDescendants(this, nameof(skillTwo));
 	}
    
+    
 }
