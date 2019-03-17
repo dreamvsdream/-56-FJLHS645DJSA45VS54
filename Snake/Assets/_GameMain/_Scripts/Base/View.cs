@@ -19,11 +19,16 @@ namespace GameMain.View
 {
 	using UnityEngine;
 
+
+	public abstract class View : MonoBehaviour
+	{
+
+	}
 	/// <summary>
 	/// MVP中的view
 	/// </summary>
 	/// <typeparam name="T"></typeparam>
-	public abstract class View<T> : MonoBehaviour where T : class
+	public abstract class View<T> : View where T : class
 	{
 		//protected static int uSID;
 		//protected static T[] Arr = new T[4];

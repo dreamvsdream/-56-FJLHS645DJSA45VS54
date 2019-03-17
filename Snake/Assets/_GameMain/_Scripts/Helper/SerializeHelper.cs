@@ -17,7 +17,15 @@ public static class SerializeHelper
 	/// <returns></returns>
 	public static T FromJson<T>(string value)
 	{
-		return BsonSerializer.Deserialize<T>(value);
+		var type = typeof(T);
+		if (type.IsValueType)
+		{
+			return JsonUtility.FromJson<T>(value);
+		}
+		else
+		{
+			return BsonSerializer.Deserialize<T>(value);
+		}
 	}
 
 	/// <summary>

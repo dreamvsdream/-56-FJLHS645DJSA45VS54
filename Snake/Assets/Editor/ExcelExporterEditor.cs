@@ -42,7 +42,7 @@ public class ExcelExporterEditor : EditorWindow
 		GetWindow(typeof(ExcelExporterEditor));
 	}
 
-	private const string ExcelPath = "./Assets/Excel";
+	private const string ExcelPath = "./Excel";
 	private const string ServerConfigPath = "./Assets/_GameMain/ExcelText";
 
 	private bool isClient;
@@ -135,12 +135,24 @@ public class ExcelExporterEditor : EditorWindow
 			//sb.Append("\t{\n");
 			//sb.Append("\t}\n\n");
 
-			string fileDesc = GetCellString(sheet, 1, 0);
-			if (fileDesc != "")
+			var fileDesc = GetCellString(sheet, 2, 0);
+			if (string.IsNullOrEmpty(fileDesc) == false)
 			{
 				sb.Append($"\n\t/// <summary>{fileDesc}</summary>\n");
 			}
-			sb.Append($"\n\tpublic class {protoName}: IConfig");
+
+			var codeName = GetCellString(sheet, 3, 0);
+			codeName = string.IsNullOrEmpty(codeName) ? fileName : codeName;
+
+			var fileType = GetCellString(sheet, 4, 0);
+			fileType = string.IsNullOrEmpty(fileType) ? "class" : fileType;
+
+			if (protoName.StartsWith("#"))
+			{
+				protoName = protoName.Substring(1);
+			}
+
+			sb.Append($"\n\tpublic {fileType} {protoName}: IConfig");
 			sb.Append("\n\t{");
 			//sb.Append("\n\t\t[System.NonSerialized]");
 			//sb.Append("\n\t\tpublic bool isDisposed;");
@@ -223,11 +235,13 @@ public class ExcelExporterEditor : EditorWindow
 			{
 				continue;
 			}
-			if (Path.GetFileName(filePath).StartsWith("~"))
+			string fileName = Path.GetFileName(filePath);
+
+			if (fileName.StartsWith("#"))
 			{
 				continue;
 			}
-			string fileName = Path.GetFileName(filePath);
+
 			string oldMD5 = this.md5Info.Get(fileName);
 			string md5 = Md5Helper.FileMD5(filePath);
 			this.md5Info.Add(fileName, md5);
@@ -248,6 +262,10 @@ public class ExcelExporterEditor : EditorWindow
 
 	private void Export(string fileName, string exportDir)
 	{
+		//if (fileName.StartsWith("#"))
+		//{
+		//	fileName = fileName.Substring(2);
+		//}
 		XSSFWorkbook xssfWorkbook;
 		using (FileStream file = new FileStream(fileName, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
 		{

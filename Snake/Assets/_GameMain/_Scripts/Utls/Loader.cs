@@ -24,7 +24,8 @@ namespace GameMain
 
 #if Use_Addressable
 	using UnityEngine.AddressableAssets;
-	using UnityEngine.ResourceManagement;
+	using UnityEngine.ResourceManagement.AsyncOperations;
+	using UnityEngine.ResourceManagement.ResourceLocations;
 #endif
 
 	[System.Serializable]
@@ -94,7 +95,7 @@ namespace GameMain
 			//if (key is string)
 			//	return Addressables.Instantiate<GameObject>($"{AddressablePath}_Prefabs/{key}.prefab", parent, isWorldPos);
 			//else
-			return Addressables.Instantiate<GameObject>(key, parent, isWorldPos);
+			return Addressables.Instantiate(key, parent, isWorldPos);
 		}
 
 		public static IAsyncOperation<GameObject> InstantiatePrefab(object key, Vector3 position, Quaternion rotation, Transform parent = null)
@@ -102,18 +103,18 @@ namespace GameMain
 			//if (key is string)
 			//	return Addressables.Instantiate<GameObject>($"{AddressablePath}_Prefabs/{key}.prefab", position, rotation,parent);
 			//else
-			return Addressables.Instantiate<GameObject>(key, position, rotation, parent);
+			return Addressables.Instantiate(key, position, rotation, parent);
 		}
 
-		public static IAsyncOperation<IList<T>> InstantiateAll<T>(object key, System.Action<IAsyncOperation<T>> onComp, Transform parent = null, bool isWorldPos = false) where T : UnityEngine.Object
+		public static IAsyncOperation<IList<GameObject>> InstantiateAll<T>(object key, System.Action<IAsyncOperation<GameObject>> onComp, Transform parent = null, bool isWorldPos = false) where T : UnityEngine.Object
 		{
 			//if (key is string)
 			//	return Addressables.InstantiateAll<T>($"{AddressablePath}{key}", onComp, parent, isWorldPos);
 			//else
-			return Addressables.InstantiateAll<T>(key, onComp, parent, isWorldPos);
+			return Addressables.InstantiateAll(key, onComp, parent, isWorldPos);
 		}
 
-		public static void Release(Object t, float delay = 0)
+		public static void Release(GameObject t, float delay = 0)
 		{
 			Addressables.ReleaseInstance(t, delay);
 		}

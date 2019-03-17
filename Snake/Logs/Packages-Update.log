@@ -1,0 +1,27 @@
+
+=== Sat Mar 16 10:25:56 2019
+
+Packages were changed.
+Update Mode: updateDependencies
+
+The following packages were added:
+  com.unity.timeline@1.0.0
+  com.unity.xr.legacyinputhelpers@1.0.0
+The following packages were updated:
+  com.unity.analytics from version 3.2.2 to 3.3.2
+  com.unity.package-manager-ui from version 2.0.3 to 2.1.1
+
+=== Sat Mar 16 15:06:49 2019
+
+Packages were changed.
+Update Mode: resetToDefaultDependencies
+
+The following packages were added:
+  com.unity.collab-proxy@1.2.15
+The following packages were updated:
+  com.unity.purchasing from version 2.0.3 to 2.0.1
+The following packages were removed:
+  com.unity.2d.spriteshape@1.0.12-preview.1
+  com.unity.addressables@0.6.7-preview
+  com.unity.vectorgraphics@1.0.0-preview.23
+  com.unity.xr.legacyinputhelpers@1.0.0

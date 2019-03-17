@@ -47,7 +47,7 @@ namespace GameMain
 		{
 			if (!scale.HasValue)
 			{
-				scale = UIMgr.Instance.canvasScaler.scaleFactor;
+				//scale = UIMgr.Instance.canvasScaler.scaleFactor;
 			}
 			// Convert the rectangle to world corners and grab the top left
 			Vector3[] corners = new Vector3[4];

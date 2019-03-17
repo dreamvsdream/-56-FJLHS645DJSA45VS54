@@ -1,5 +1,0 @@
-{"index":1,"Name":"补血","IsDurationEffect":false,"LifeGain":100,"MovementMore":0,"DurationTime":0,"SpecialEffect":0}
-{"index":2,"Name":"炸弹","IsDurationEffect":false,"LifeGain":0,"MovementMore":0,"DurationTime":0,"SpecialEffect":2}
-{"index":3,"Name":"减速","IsDurationEffect":true,"LifeGain":0,"MovementMore":-50,"DurationTime":7,"SpecialEffect":0}
-{"index":4,"Name":"无敌","IsDurationEffect":true,"LifeGain":0,"MovementMore":0,"DurationTime":7,"SpecialEffect":4}
-{"index":5,"Name":"磁石","IsDurationEffect":true,"LifeGain":0,"MovementMore":0,"DurationTime":7,"SpecialEffect":5}

@@ -17,12 +17,14 @@
 #endregion
 namespace GameMain.View
 {
+	public abstract class Model { }
+
 	/// <summary>
 	/// MVP中的M
 	/// </summary>
 	/// <typeparam name="T"></typeparam>
 	[System.Serializable]
-	public abstract class Model<T> where T:class
+	public abstract class Model<T> : Model where T:class
 	{
 		//protected static int uSID;
 		//protected static T[] Arr = new T[4];

@@ -19,11 +19,15 @@ namespace GameMain.Presenter
 {
 	using UnityEngine;
 
+	public abstract class Presenter : MonoBehaviour
+	{
+
+	}
 	/// <summary>
 	/// MVP中的P
 	/// </summary>
 	/// <typeparam name="T"></typeparam>
-	public abstract class Presenter<T> :MonoBehaviour where T : class
+	public abstract class Presenter<T> : Presenter where T : class
 	{
 		//protected static int uSID;
 		//protected static T[] Arr = new T[4];
