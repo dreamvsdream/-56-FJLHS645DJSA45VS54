@@ -1,15 +1,21 @@
 {
-    "name": "Unity.Editor",
+    "name": "GameMain",
     "references": [
+        "Unity.ResourceManager",
+        "Unity.TextMeshPro",
+        "Unity.Addressables",
+        "Unity.Analytics.DataPrivacy",
+        "UniRx.Async",
+        "UniRx",
+        "LINQtoGameObject",
         "ThirdPartyUnsafe",
+        "ThirdPartySafe",
+        "GameMain.Data",
         "GameMain.Helper",
-        "GameMain",
         "GameHotfix"
     ],
     "optionalUnityReferences": [],
-    "includePlatforms": [
-        "Editor"
-    ],
+    "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": true,
     "overrideReferences": false,

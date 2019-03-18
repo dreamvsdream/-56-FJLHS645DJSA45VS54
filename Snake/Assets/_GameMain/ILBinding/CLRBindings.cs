@@ -4,7 +4,7 @@ using System.Reflection;
 
 namespace ILRuntime.Runtime.Generated
 {
-    class CLRBindings
+    public class CLRBindings
     {
 
 
@@ -13,11 +13,12 @@ namespace ILRuntime.Runtime.Generated
         /// </summary>
         public static void Initialize(ILRuntime.Runtime.Enviorment.AppDomain app)
         {
-            GameMain_Define_Binding.Register(app);
-            GameMain_Log_Binding.Register(app);
-            System_Exception_Binding.Register(app);
-            System_Collections_IDictionary_Binding.Register(app);
-            System_String_Binding.Register(app);
+            UnityEngine_Debug_Binding.Register(app);
+            UnityEngine_GameObject_Binding.Register(app);
+            UnityEngine_Transform_Binding.Register(app);
+            UnityEngine_Object_Binding.Register(app);
+            UnityEngine_Vector3_Binding.Register(app);
+            UnityEngine_Time_Binding.Register(app);
 
             ILRuntime.CLR.TypeSystem.CLRType __clrType = null;
         }

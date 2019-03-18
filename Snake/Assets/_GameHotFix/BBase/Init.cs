@@ -22,11 +22,9 @@ namespace GameHotfix
 			try
 			{
 				// 注册热更层回调
-				GameMain.Game.Hotfix.Update = () => { Update(); };
-				GameMain.Game.Hotfix.LateUpdate = () => { LateUpdate(); };
-				GameMain.Game.Hotfix.OnApplicationQuit = () => { OnApplicationQuit(); };
-
-				temp = new ILBehaviourTest();
+				//GameMain.Game.Hotfix.Update = () => { Update(); };
+				//GameMain.Game.Hotfix.LateUpdate = () => { LateUpdate(); };
+				//GameMain.Game.Hotfix.OnApplicationQuit = () => { OnApplicationQuit(); };
 
 			}
 			catch (Exception e)

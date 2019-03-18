@@ -2,6 +2,7 @@
 using UniRx.Async;
 using UnityEngine.Networking;
 using System;
+using GameHotfix;
 
 namespace GameMain
 {
@@ -10,6 +11,7 @@ namespace GameMain
 		private void Start()
 		{
 			Load();
+			
 		}
 		private async void Load()
 		{

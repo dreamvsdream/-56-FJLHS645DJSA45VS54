@@ -6,6 +6,7 @@ using UnityEngine;
 using ILRuntime.CLR.Method;
 using ILRuntime.Runtime.Enviorment;
 using UniRx.Async;
+using System.Reflection;
 #if !ILRuntime
 using System.Reflection;
 #endif
@@ -78,17 +79,18 @@ namespace GameMain
 #endif
 			await new UniTask();
 		}
-		
-		T CreateInstance<T>(string typeName) where T:class
+
+		public T CreateInstance<T>(params object[] args) where T : class
 		{
 			if (Define.IsILRuntime)
 			{
-				return appDomain.Instantiate("TypeName") as T;
+				Type t = typeof(T);
+				return appDomain.Instantiate<T>(t.ToString(), args);
 			}
 			else
 			{
-				Type t = Type.GetType("TypeName");
-				return Activator.CreateInstance(t) as T;
+				Type t = typeof(T);
+				return Activator.CreateInstance(t,args) as T;
 			}
 		}
 

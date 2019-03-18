@@ -1,8 +1,9 @@
-﻿using UnityEngine;
+﻿using ILRuntime.Runtime.Intepreter;
+using UnityEngine;
 
 namespace GameHotfix
 {
-	public class ILBehaviourTest
+	public class ILBehaviourTest: ILTypeInstance
 	{
 		GameObject go;
 
@@ -12,11 +13,6 @@ namespace GameHotfix
 			Start();
 		}
 
-		public ILBehaviourTest()
-		{
-
-		}
-
 		public void Start()
 		{
 			Debug.Log(go.transform.position);
@@ -24,9 +20,10 @@ namespace GameHotfix
 
 		public void Update()
 		{
-			if (Input.GetMouseButton(0))
+			Debug.Log(go.transform.position);
+			if (go != null)
 			{
-				Debug.Log("Test");
+				go.transform.position += Vector3.up * Time.deltaTime * 10f;
 			}
 		}
 	}

@@ -3,11 +3,13 @@ using UnityEngine;
 using System;
 using System.Threading;
 using UniRx.Async;
+using GameHotfix;
 
 namespace GameMain
 {
 	public class Init : MonoBehaviour
 	{
+		ILBehaviourTest temp;
 		private void Start()
 		{
 			this.StartAsync();
@@ -24,6 +26,8 @@ namespace GameMain
 				Game.Hotfix.GotoHotfix();
 
 				DontDestroyOnLoad(gameObject);
+
+				temp = Game.Hotfix.CreateInstance<ILBehaviourTest>(this.gameObject);
 			}
 			catch (Exception e)
 			{
@@ -35,6 +39,14 @@ namespace GameMain
 		{
 			OneThreadSynchronizationContext.Instance.Update();
 			Game.Hotfix.Update?.Invoke();
+			if (temp != null)
+			{
+				temp.Update();
+			}
+			else
+			{
+				Debug.Log("Nu");
+			}
 			//Game.EventSystem.Update();
 		}
 
