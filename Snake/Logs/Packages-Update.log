@@ -25,3 +25,15 @@ The following packages were removed:
   com.unity.addressables@0.6.7-preview
   com.unity.vectorgraphics@1.0.0-preview.23
   com.unity.xr.legacyinputhelpers@1.0.0
+
+=== Mon Mar 18 23:51:47 2019
+
+Packages were changed.
+Update Mode: updateDependencies
+
+The following packages were added:
+  com.unity.timeline@1.0.0
+  com.unity.xr.legacyinputhelpers@1.0.0
+The following packages were updated:
+  com.unity.analytics from version 3.2.2 to 3.3.2
+  com.unity.package-manager-ui from version 2.0.3 to 2.1.1

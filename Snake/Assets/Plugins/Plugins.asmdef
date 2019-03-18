@@ -1,0 +1,15 @@
+{
+    "name": "Plugins",
+    "references": [
+        "UniRx",
+        "LINQtoGameObject"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": []
+}

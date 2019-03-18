@@ -1,0 +1,20 @@
+{
+    "name": "DyncDll",
+    "references": [
+        "Game",
+        "GameMain.Helper",
+        "GameMain.Data"
+    ],
+    "optionalUnityReferences": [
+        "TestAssemblies"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": true,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": []
+}

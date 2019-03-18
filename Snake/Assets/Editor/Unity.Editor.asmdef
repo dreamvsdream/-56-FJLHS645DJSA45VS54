@@ -3,8 +3,7 @@
     "references": [
         "ThirdPartyUnsafe",
         "GameMain.Helper",
-        "GameMain",
-        "GameHotfix"
+        "Game"
     ],
     "optionalUnityReferences": [],
     "includePlatforms": [
