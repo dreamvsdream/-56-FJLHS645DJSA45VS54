@@ -1,4 +1,5 @@
-﻿using System;
+﻿#if UNITY_EDITOR
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Security.Cryptography;
@@ -39,11 +40,11 @@ public class ExcelExporterEditor : EditorWindow
 	[MenuItem("Tools/导入Excel数据")]
 	private static void ShowWindow()
 	{
-		GetWindow(typeof(ExcelExporterEditor));
+		//GetWindow(typeof(ExcelExporterEditor));
 	}
 
 	private const string ExcelPath = "./Excel";
-	private const string ServerConfigPath = "./Assets/_GameMain/ExcelText";
+	//private const string ServerConfigPath = "./Assets/_GameCommon/ExcelText";
 
 	private bool isClient;
 
@@ -54,7 +55,7 @@ public class ExcelExporterEditor : EditorWindow
 	{
 		try
 		{
-			const string clientPath = "./Assets/_GameMain/ExcelText";
+			const string clientPath = "./Assets/_GameCommon/ExcelText";
 
 			if (GUILayout.Button("导入Excel配置"))
 			{
@@ -62,7 +63,7 @@ public class ExcelExporterEditor : EditorWindow
 
 				ExportAll(clientPath);
 
-				ExportAllClass(@"./Assets/_GameMain/ExcelConfig", "namespace GameMain.ExcelData\n{\n");
+				ExportAllClass(@"./Assets/_GameCommon/ExcelConfig", "namespace GameMain.ExcelData\n{\n");
 				//ExportAllClass(@"./Assets/Hotfix/Entity/Config", "namespace Test\n{\n");
 
 				Debug.Log($"导入Excel配置完成!");
@@ -432,3 +433,5 @@ public class ExcelExporterEditor : EditorWindow
 		return cell?.ToString() ?? "";
 	}
 }
+#endif
+
