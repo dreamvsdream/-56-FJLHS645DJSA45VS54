@@ -1,0 +1,168 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1805974074392229600
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6824792075049500007}
+  - component: {fileID: 4210562262197558282}
+  m_Layer: 0
+  m_Name: I2Languages
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6824792075049500007
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1805974074392229600}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4210562262197558282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1805974074392229600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 488051eaa73ba421e8fe4868f2e0f364, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Google_WebServiceURL: https://script.google.com/macros/s/AKfycbydWX91PKkG3FutYWw4-b4I8crch2F33I3v5qTrOA/exec
+  Google_SpreadsheetKey: 16fodKO8Z_SrbFZjdLC1Rc4fSjhn_TWn0FgB2zDtEwGA
+  Google_SpreadsheetName: I2Loc BehaviourTreeTest Assets/I2/Localization/Examples/Targets/uGUI/Scenes/uGUI
+    Localization.unity I2Languages
+  Google_LastUpdatedVersion: 1548495405312
+  GoogleUpdateFrequency: 3
+  GoogleUpdateDelay: 5
+  mTerms:
+  - Term: Button
+    TermType: 0
+    Description: 
+    Languages:
+    - Button
+    - "\u6309\u94AE"
+    - X
+    - X
+    Languages_Touch:
+    - 
+    - 
+    - 
+    - 
+    Flags: 00000000
+  - Term: Slider
+    TermType: 0
+    Description: 
+    Languages:
+    - Slider
+    - "\u6ED1\u5757"
+    - X
+    - X
+    Languages_Touch:
+    - 
+    - 
+    - 
+    - 
+    Flags: 00000000
+  - Term: Image
+    TermType: 0
+    Description: 
+    Languages:
+    - Image
+    - "\u56FE\u7247"
+    - X
+    - X
+    Languages_Touch:
+    - 
+    - 
+    - 
+    - 
+    Flags: 00000000
+  - Term: Text
+    TermType: 0
+    Description: 
+    Languages:
+    - Text
+    - "\u6587\u5B57"
+    - X
+    - X
+    Languages_Touch:
+    - 
+    - 
+    - 
+    - 
+    Flags: 00000000
+  - Term: Canvas
+    TermType: 0
+    Description: 
+    Languages:
+    - Canvas
+    - "\u753B\u5E03"
+    - X
+    - X
+    Languages_Touch:
+    - 
+    - 
+    - 
+    - 
+    Flags: 00000000
+  - Term: Icon
+    TermType: 0
+    Description: 
+    Languages:
+    - Icon
+    - "\u56FE\u6807"
+    - X
+    - X
+    Languages_Touch:
+    - 
+    - 
+    - 
+    - 
+    Flags: 00000000
+  - Term: Refer
+    TermType: 2
+    Description: 
+    Languages:
+    - References/Sprites/L_EN
+    - References/Sprites/L_ES
+    - References/Sprites/L_ES
+    - References/Sprites/L_FR
+    Languages_Touch:
+    - 
+    - 
+    - 
+    - 
+    Flags: 00000000
+  mLanguages:
+  - Name: English
+    Code: en
+  - Name: Chinese
+    Code: zh
+  - Name: Japanese
+    Code: ja
+  - Name: French
+    Code: fr
+  CaseInsensitiveTerms: 0
+  Assets: []
+  NeverDestroy: 1
+  UserAgreesToHaveItOnTheScene: 0
+  UserAgreesToHaveItInsideThePluginsFolder: 0
+  Spreadsheet_LocalFileName: 
+  Spreadsheet_LocalCSVSeparator: ','
+  Spreadsheet_LocalCSVEncoding: Unicode (UTF-8)

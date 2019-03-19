@@ -1,0 +1,22 @@
+{
+    "name": "Game",
+    "references": [
+        "Unity.Addressables",
+        "Unity.TextMeshPro",
+        "Unity.ResourceManager",
+        "UniRx",
+        "UniRx.Async",
+        "GameMain.Data",
+        "GameMain.Helper",
+        "ThirdPartySafe",
+        "Plugins"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": true,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": []
+}

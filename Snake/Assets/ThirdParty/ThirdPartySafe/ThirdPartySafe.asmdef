@@ -1,0 +1,16 @@
+{
+    "name": "ThirdPartySafe",
+    "references": [
+        "UniRx",
+        "UniRx.Async",
+        "LINQtoGameObject"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": []
+}
