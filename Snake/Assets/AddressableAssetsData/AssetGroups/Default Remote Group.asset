@@ -15,15 +15,11 @@ MonoBehaviour:
   m_GroupName: Default Remote Group
   m_Data:
     m_SerializedData: []
-  m_GUID: c88978a90afdb8a44acd3ae44774e922
-  m_SerializeEntries:
-  - m_GUID: 751a4f5f6ebfd5b4a8f759a2ba3d0a7b
-    m_Address: GameObject
-    m_ReadOnly: 0
-    m_SerializedLabels: []
+  m_GUID: 27258285869c4a24e9ad53afac29b0bd
+  m_SerializeEntries: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 0e3a5bc69a78c3a4f8314949305870ca, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: 7bd0b9876707d924db8f9ff8cdc41557, type: 2}
-    - {fileID: 11400000, guid: 3b1c63d63d2f0194689c298f8c7c615e, type: 2}
+    - {fileID: 11400000, guid: 41907bc65fe57274db2826ed25cb5aad, type: 2}
+    - {fileID: 11400000, guid: 60c92a2e05b537a45a13400ae5c7eb6d, type: 2}

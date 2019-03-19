@@ -11,9 +11,14 @@ namespace wxb
     using ILRuntime.Mono.Cecil;
     using ILRuntime.Mono.Collections.Generic;
     using ILRuntime.CLR.Method;
-    using global::IL;
 
-    public class Hotfix
+	using UniRx.Async;
+	using GameMain;
+
+    using global::IL;
+	using System.IO;
+
+	public class Hotfix
     {
         public FieldInfo field;
         public MethodInfo method;
@@ -288,7 +293,7 @@ namespace wxb
         // 所有的热更当中的类型
         public static List<IType> AllTypes { get; private set; }
 
-        public static void Init(IResLoad resLoad = null)
+        public static async UniTask Init(IResLoad resLoad = null)
         {
             if (appdomain != null)
                 return;
@@ -307,7 +312,7 @@ namespace wxb
                 ResLoad.Set(resLoad);
             }
 
-            InitHotModule();
+            await InitHotModule();
 
             refType = new RefType("hot.hotApp");
             refType.TryInvokeMethod("Init");
@@ -345,13 +350,15 @@ namespace wxb
             }
         }
 
-        static public void InitHotModule()
+        static public async UniTask InitHotModule()
         {
             appdomain = new AppDomain();
             appdomain.RegisterCrossBindingAdaptor(new CoroutineAdapter());
 
+
+
 #if UNITY_EDITOR
-            System.Type clrType = System.Type.GetType("ILRuntime.Runtime.Generated.CLRBindings");
+			System.Type clrType = System.Type.GetType("ILRuntime.Runtime.Generated.CLRBindings");
             if (clrType != null)
             {
                 clrType.GetMethod("Initialize").Invoke(null, new object[] { appdomain });
@@ -359,22 +366,37 @@ namespace wxb
 #else
             ILRuntime.Runtime.Generated.CLRBindings.Initialize(appdomain);
 #endif
+
             ILRuntime.Runtime.Generated.UnityEngine_Debug_Binding.Register(appdomain);
             try
             {
-                DllStream = CopyStream(ResLoad.GetStream("Data/DyncDll.dll"));
+				var dll = Loader.LoadAssetAsync<UnityEngine.TextAsset>("DyncDll.dll");
+				var pdb = Loader.LoadAssetAsync<UnityEngine.TextAsset>("DyncDll.pdb");
+				await dll;
+				await pdb;
+				byte[] assBytes = dll.Result.bytes;
+				byte[] pdbBytes = pdb.Result.bytes;
+
+				var  dllStream = new MemoryStream(assBytes);
+				var  pdbStream = new MemoryStream(pdbBytes);
+
+				appdomain.LoadAssembly(dllStream, pdbStream, new ILRuntime.Mono.Cecil.Pdb.PdbReaderProvider());
+
+				/*
+				DllStream = CopyStream(ResLoad.GetStream("Assets/Res/Code/DyncDll.dll"));
                 {
 #if USE_PDB
-                    SymbolStream = CopyStream(ResLoad.GetStream("Data/DyncDll.pdb"));
+                    SymbolStream = CopyStream(ResLoad.GetStream("Assets/Res/Code/DyncDll.pdb"));
                     appdomain.LoadAssembly(DllStream, SymbolStream, new ILRuntime.Mono.Cecil.Pdb.PdbReaderProvider());
 #elif USE_MDB
-                    SymbolStream = CopyStream(ResLoad.GetStream("Data/DyncDll.mdb"));
+                    SymbolStream = CopyStream(ResLoad.GetStream("Assets/Res/Code/DyncDll.mdb"));
                     appdomain.LoadAssembly(DllStream, SymbolStream, new ILRuntime.Mono.Cecil.Mdb.MdbReaderProvider());
 #else
                     appdomain.LoadAssembly(DllStream);
 #endif
-                }
-            }
+				}
+				 */
+			}
             catch (System.Exception ex)
             {
                 wxb.L.LogException(ex);

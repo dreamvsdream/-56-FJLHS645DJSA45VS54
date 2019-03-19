@@ -7,10 +7,10 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 0
     path: 
-    guid: a70e75b7407f18749943269676cc9ee7
+    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/hotfixtest.unity
-    guid: fffc03997707fe84899eb056d3b3d9c0
+    path: Assets/Scenes/hotfixtest2.unity
+    guid: 8fecd3461b5928648a207ac05878f0df
   m_configObjects:
-    com.unity.addressableassets: {fileID: 11400000, guid: ce935abab080d534c9fc41a0ed18dfea,
+    com.unity.addressableassets: {fileID: 11400000, guid: 3d2a7e5d64acc424b9c79f540f4a36c1,
       type: 2}

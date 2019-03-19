@@ -296,7 +296,7 @@
             sb.AppendFormatLine("    }}");
             sb.AppendFormatLine("}}");
 
-            string filename = "Assets/XIL/Scripts/RefType_InvokeMethod.cs";
+            string filename = "Assets/_GameMain/XIL/Scripts/RefType_InvokeMethod.cs";
             if (System.IO.File.Exists(filename))
                 System.IO.File.Delete(filename);
             System.IO.File.WriteAllText(filename, sb.ToString());

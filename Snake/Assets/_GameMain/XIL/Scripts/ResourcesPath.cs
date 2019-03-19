@@ -63,7 +63,15 @@ public static class ResourcesPath
 
     static public readonly string dataPath;
 
-    static public readonly string streamingAssetsPath;
+	static public string dyncDllPath => Path.Combine(ScriptAssembliesDir, HotfixDll);
+	static public string dyncPdbPath => Path.Combine(ScriptAssembliesDir, HotfixPdb);
+
+	public const string ScriptAssembliesDir = "Library/ScriptAssemblies";
+	public const string CodeDir = "Assets/Res/Code/";
+	public const string HotfixDll = "DyncDll.dll";
+	public const string HotfixPdb = "DyncDll.pdb";
+
+	static public readonly string streamingAssetsPath;
 
     public const string PlatformKey =
 #if UNITY_IPHONE

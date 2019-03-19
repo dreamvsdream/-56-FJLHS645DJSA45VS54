@@ -65,18 +65,20 @@ namespace wxb
             ILRuntime.Runtime.Generated.UnityEngine_Debug_Binding.Register(appdomain);
             try
             {
-                var fs = ReadFile("Data/DyncDll.dll");
+                //var fs = ReadFile("Assets/Res/Code/DyncDll.dll");
+                var fs = ReadFile(ResourcesPath.dyncDllPath);
 #if USE_PDB
-                var p = ReadFile("Data/DyncDll.pdb");
+                //var p = ReadFile("Assets/Res/Code/DyncDll.pdb");
+                var p = ReadFile(ResourcesPath.dyncPdbPath);
                 appdomain.LoadAssembly(fs, p, new ILRuntime.Mono.Cecil.Pdb.PdbReaderProvider());
 #elif USE_MDB
-                var p = ReadFile("Data/DyncDll.mdb");
+                var p = ReadFile("Assets/Res/Code/DyncDll.mdb");
                 appdomain.LoadAssembly(fs, p, new ILRuntime.Mono.Cecil.Mdb.MdbReaderProvider());
 #else
                 appdomain_.LoadAssembly(fs);
 #endif
-            }
-            catch (System.Exception ex)
+			}
+			catch (System.Exception ex)
             {
                 wxb.L.LogException(ex);
             }

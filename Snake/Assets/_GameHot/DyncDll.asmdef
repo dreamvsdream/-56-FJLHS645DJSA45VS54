@@ -5,9 +5,7 @@
         "GameMain.Helper",
         "GameMain.Data"
     ],
-    "optionalUnityReferences": [
-        "TestAssemblies"
-    ],
+    "optionalUnityReferences": [],
     "includePlatforms": [
         "Editor"
     ],

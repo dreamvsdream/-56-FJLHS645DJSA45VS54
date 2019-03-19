@@ -290,7 +290,7 @@
             var assemblies = System.AppDomain.CurrentDomain.GetAssemblies();
             foreach (var assembly in assemblies)
             {
-                if (assembly.FullName.StartsWith("Game-Editor"))
+                if (assembly.FullName.StartsWith("Assembly-CSharp-Editor"))
                     continue;
 
                 if (assembly.FullName.StartsWith("Game"))
@@ -300,7 +300,6 @@
                     {
                         if (type.FullName.StartsWith("<"))
                             continue;
-
                         System.Type t = null;
                         if (AllTypesByFullName.TryGetValue(type.FullName, out t))
                         {

@@ -6,7 +6,6 @@ namespace hot
 
     class hotApp
     {
-
         static void TestLog()
         {
             UnityEngine.Debug.LogFormat("TestLog");
@@ -23,7 +22,7 @@ namespace hot
 
         void Init()
         {
-            HotHelloWorld.Reg();
+			wxb.L.Log("Init from hotapp");
         }
     }
 }

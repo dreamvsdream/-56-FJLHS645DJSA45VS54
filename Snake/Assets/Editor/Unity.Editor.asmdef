@@ -3,7 +3,8 @@
     "references": [
         "ThirdPartyUnsafe",
         "GameMain.Helper",
-        "Game"
+        "Game",
+        "UniRx.Async"
     ],
     "optionalUnityReferences": [],
     "includePlatforms": [

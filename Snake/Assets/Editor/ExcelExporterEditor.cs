@@ -40,7 +40,7 @@ public class ExcelExporterEditor : EditorWindow
 	[MenuItem("Tools/导入Excel数据")]
 	private static void ShowWindow()
 	{
-		//GetWindow(typeof(ExcelExporterEditor));
+		GetWindow(typeof(ExcelExporterEditor));
 	}
 
 	private const string ExcelPath = "./Excel";
