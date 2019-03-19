@@ -10,16 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
-  m_Name: Default Local Group
+  m_Name: Content Update2
   m_EditorClassIdentifier: 
-  m_GroupName: Default Local Group
+  m_GroupName: Content Update2
   m_Data:
     m_SerializedData: []
-  m_GUID: 0771d1a370dd505478da86a473712059
-  m_SerializeEntries: []
+  m_GUID: e88db3d8ec93e9447905757eeafd7fbc
+  m_SerializeEntries:
+  - m_GUID: 3dad59e90652da042abe1b51c49f8cb9
+    m_Address: DyncDll.dll
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: e033affdb6931704dba2534baa8e8eb7
+    m_Address: DyncDll.pdb
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 0e3a5bc69a78c3a4f8314949305870ca, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: 241c469fab76e9a4c8e79f5af1b26d38, type: 2}
-    - {fileID: 11400000, guid: 9348b14cab1a69949b903473deec7e2b, type: 2}
+    - {fileID: 11400000, guid: d4fc16a262d59c047a882423f52dea4d, type: 2}
+    - {fileID: 11400000, guid: 07094c4c3c763864ba5b7cda92b4ea85, type: 2}

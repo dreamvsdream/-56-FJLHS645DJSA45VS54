@@ -42,7 +42,7 @@ namespace hot
 		static void ShowMyInfo(ShowInfo showInfo)
 		{
 			RefType refType = new RefType(showInfo);
-			refType.SetField("info", "this is not bad from HotShowinfor");
+			refType.SetField("info", "this is goodd 5");
 			__Hotfix_ShowMyInfo.Invoke(showInfo);
 		}
 	}
