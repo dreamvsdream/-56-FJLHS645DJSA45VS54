@@ -10,9 +10,9 @@ public class Init : MonoBehaviour
 	private async void Awake()
 	{
 		ins = this;
-
+#if USE_HOT
 		await wxb.hotMgr.Init();
-
+#endif
 		isInited = true;
 	}
 

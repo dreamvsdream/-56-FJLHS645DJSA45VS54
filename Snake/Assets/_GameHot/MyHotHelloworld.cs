@@ -17,7 +17,7 @@ namespace hot
 		{
 			//__Hotfix_TestOne_0.Invoke(world);
 			RefType refType = new RefType((object)world);
-			refType.SetField("str","this is bad");
+			refType.SetField("str", "this is bad");
 
 			__Hotfix_Start.Invoke(world);
 		}
@@ -30,7 +30,9 @@ namespace hot
 
 			__Hotfix_TestOne.Invoke(world);
 			wxb.L.Log("From hot test one");
+			
 		}
+
 	}
 
 	[AutoInitAndRelease]
