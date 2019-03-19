@@ -183,7 +183,7 @@ namespace wxb.Editor
             try
             {
                 HotfixInject("./Library/ScriptAssemblies/Game.dll", ()=> { return new HashSet<string>(GenAutoExport.FixMarkIL()); });
-				await System.Threading.Tasks.Task.Delay(1000);
+				await System.Threading.Tasks.Task.Delay(100);
 				UnityEditor.EditorApplication.ExecuteMenuItem("Edit/Play");
 			}
 			catch (System.Exception ex)
@@ -194,7 +194,7 @@ namespace wxb.Editor
 
 		[UnityEditor.Callbacks.PostProcessScene]
 		[UnityEditor.MenuItem("XIL/Hotfix Inject", false, 3)]
-		public static async void Inject()
+		public static void Inject()
 		{
 			if (UnityEngine.Application.isPlaying)
 				return;

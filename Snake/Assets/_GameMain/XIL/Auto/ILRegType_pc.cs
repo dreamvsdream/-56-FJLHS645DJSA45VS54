@@ -73,7 +73,6 @@ namespace AutoIL
             appdomain.DelegateManager.RegisterFunctionDelegate<wxb.Generator.Parameter, wxb.Generator.Parameter, System.Int32>();
             appdomain.DelegateManager.RegisterFunctionDelegate<UnityEngine.Object, System.Boolean>();
             appdomain.DelegateManager.RegisterFunctionDelegate<UnityEngine.Object, UnityEngine.Object, System.Int32>();
-            appdomain.DelegateManager.RegisterFunctionDelegate<System.Collections.Generic.HashSet<System.String>>();
             appdomain.DelegateManager.RegisterFunctionDelegate<System.Type, System.Boolean>();
             appdomain.DelegateManager.RegisterFunctionDelegate<System.Type, System.Type, System.Int32>();
             appdomain.DelegateManager.RegisterFunctionDelegate<wxb.GenHotfixDelegate.Param, System.Boolean>();

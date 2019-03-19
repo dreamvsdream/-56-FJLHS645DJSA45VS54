@@ -83,48 +83,7 @@ namespace IL
                 return result;
             }
         }
-        public bool __Gen_Delegate_Imp11(object p0)
-        {
-            using (var pObjs = new Objects(p0))
-            {
-                bool result = default(bool);
-                result = (bool)methodInfo.Invoke(null, pObjs.objs);
-                return result;
-            }
-        }
-        public void __Gen_Delegate_Imp12(object p0, bool p1)
-        {
-            using (var pObjs = new Objects(p0, p1))
-            {
-                methodInfo.Invoke(null, pObjs.objs);
-            }
-        }
-        public bool __Gen_Delegate_Imp13(object p0, object p1)
-        {
-            using (var pObjs = new Objects(p0, p1))
-            {
-                bool result = default(bool);
-                result = (bool)methodInfo.Invoke(null, pObjs.objs);
-                return result;
-            }
-        }
-        public bool __Gen_Delegate_Imp14()
-        {
-            using (var pObjs = new EmptyObjs())
-            {
-                bool result = default(bool);
-                result = (bool)methodInfo.Invoke(null, pObjs.objs);
-                return result;
-            }
-        }
-        public void __Gen_Delegate_Imp15(bool p0, object p1, object p2)
-        {
-            using (var pObjs = new Objects(p0, p1, p2))
-            {
-                methodInfo.Invoke(null, pObjs.objs);
-            }
-        }
-        public bool __Gen_Delegate_Imp16(float p0, float p1, float p2)
+        public bool __Gen_Delegate_Imp11(float p0, float p1, float p2)
         {
             using (var pObjs = new Objects(p0, p1, p2))
             {
@@ -133,7 +92,7 @@ namespace IL
                 return result;
             }
         }
-        public UnityEngine.Rect __Gen_Delegate_Imp17(object p0)
+        public UnityEngine.Rect __Gen_Delegate_Imp12(object p0)
         {
             using (var pObjs = new Objects(p0))
             {
@@ -142,7 +101,7 @@ namespace IL
                 return result;
             }
         }
-        public UnityEngine.Rect __Gen_Delegate_Imp18(object p0, System.Nullable<System.Single> p1)
+        public UnityEngine.Rect __Gen_Delegate_Imp13(object p0, System.Nullable<System.Single> p1)
         {
             using (var pObjs = new Objects(p0, p1))
             {
@@ -151,14 +110,14 @@ namespace IL
                 return result;
             }
         }
-        public void __Gen_Delegate_Imp19(int p0)
+        public void __Gen_Delegate_Imp14(int p0)
         {
             using (var pObjs = new Objects(p0))
             {
                 methodInfo.Invoke(null, pObjs.objs);
             }
         }
-        public UnityEngine.ResourceManagement.AsyncOperations.IAsyncOperation<UnityEngine.SceneManagement.Scene> __Gen_Delegate_Imp20(object p0, UnityEngine.SceneManagement.LoadSceneMode p1)
+        public UnityEngine.ResourceManagement.AsyncOperations.IAsyncOperation<UnityEngine.SceneManagement.Scene> __Gen_Delegate_Imp15(object p0, UnityEngine.SceneManagement.LoadSceneMode p1)
         {
             using (var pObjs = new Objects(p0, p1))
             {
@@ -167,7 +126,7 @@ namespace IL
                 return result;
             }
         }
-        public UnityEngine.ResourceManagement.AsyncOperations.IAsyncOperation<UnityEngine.GameObject> __Gen_Delegate_Imp21(object p0, object p1, bool p2)
+        public UnityEngine.ResourceManagement.AsyncOperations.IAsyncOperation<UnityEngine.GameObject> __Gen_Delegate_Imp16(object p0, object p1, bool p2)
         {
             using (var pObjs = new Objects(p0, p1, p2))
             {
@@ -176,7 +135,7 @@ namespace IL
                 return result;
             }
         }
-        public UnityEngine.ResourceManagement.AsyncOperations.IAsyncOperation<UnityEngine.GameObject> __Gen_Delegate_Imp22(object p0, UnityEngine.Vector3 p1, UnityEngine.Quaternion p2, object p3)
+        public UnityEngine.ResourceManagement.AsyncOperations.IAsyncOperation<UnityEngine.GameObject> __Gen_Delegate_Imp17(object p0, UnityEngine.Vector3 p1, UnityEngine.Quaternion p2, object p3)
         {
             using (var pObjs = new Objects(p0, p1, p2, p3))
             {
@@ -185,11 +144,63 @@ namespace IL
                 return result;
             }
         }
-        public void __Gen_Delegate_Imp23(object p0, float p1)
+        public void __Gen_Delegate_Imp18(object p0, float p1)
         {
             using (var pObjs = new Objects(p0, p1))
             {
                 methodInfo.Invoke(null, pObjs.objs);
+            }
+        }
+        public void __Gen_Delegate_Imp19(object p0, int p1)
+        {
+            using (var pObjs = new Objects(p0, p1))
+            {
+                methodInfo.Invoke(null, pObjs.objs);
+            }
+        }
+        public string __Gen_Delegate_Imp20(object p0)
+        {
+            using (var pObjs = new Objects(p0))
+            {
+                string result = default(string);
+                result = (string)methodInfo.Invoke(null, pObjs.objs);
+                return result;
+            }
+        }
+        public UniRx.Async.UniTask<GameMain.Net.IResponse> __Gen_Delegate_Imp21(object p0, object p1)
+        {
+            using (var pObjs = new Objects(p0, p1))
+            {
+                UniRx.Async.UniTask<GameMain.Net.IResponse> result = default(UniRx.Async.UniTask<GameMain.Net.IResponse>);
+                result = (UniRx.Async.UniTask<GameMain.Net.IResponse>)methodInfo.Invoke(null, pObjs.objs);
+                return result;
+            }
+        }
+        public UniRx.Async.UniTask<GameMain.Net.IResponse> __Gen_Delegate_Imp22(object p0, object p1, System.Threading.CancellationToken p2)
+        {
+            using (var pObjs = new Objects(p0, p1, p2))
+            {
+                UniRx.Async.UniTask<GameMain.Net.IResponse> result = default(UniRx.Async.UniTask<GameMain.Net.IResponse>);
+                result = (UniRx.Async.UniTask<GameMain.Net.IResponse>)methodInfo.Invoke(null, pObjs.objs);
+                return result;
+            }
+        }
+        public UniRx.Async.UniTask<GameMain.Net.IResponse> __Gen_Delegate_Imp23(object p0, int p1)
+        {
+            using (var pObjs = new Objects(p0, p1))
+            {
+                UniRx.Async.UniTask<GameMain.Net.IResponse> result = default(UniRx.Async.UniTask<GameMain.Net.IResponse>);
+                result = (UniRx.Async.UniTask<GameMain.Net.IResponse>)methodInfo.Invoke(null, pObjs.objs);
+                return result;
+            }
+        }
+        public UniRx.Async.UniTask<GameMain.Net.IResponse> __Gen_Delegate_Imp24(object p0, int p1, System.Threading.CancellationToken p2)
+        {
+            using (var pObjs = new Objects(p0, p1, p2))
+            {
+                UniRx.Async.UniTask<GameMain.Net.IResponse> result = default(UniRx.Async.UniTask<GameMain.Net.IResponse>);
+                result = (UniRx.Async.UniTask<GameMain.Net.IResponse>)methodInfo.Invoke(null, pObjs.objs);
+                return result;
             }
         }
 
