@@ -8,27 +8,6 @@ using System.Threading;
 
 namespace GameMain.Net
 {
-	public static class Ex
-	{
-		public static T RequestSetData<T, U>(this T t, U data) where T : Request<U> where U : struct
-		{
-			t.data = data;
-			return t;
-		}
-
-		public static T ResponseSetData<T, U>(this T t, U data) where T : Response<U> where U : struct
-		{
-			t.data = data;
-			return t;
-		}
-
-		public static T MessageSetData<T, U>(this T t, U data) where T : Message<U> where U : struct
-		{
-			t.data = data;
-			return t;
-		}
-	}
-
 	public abstract class Request<T> : IRequest where T : struct
 	{
 		public int RpcId { get; set; }

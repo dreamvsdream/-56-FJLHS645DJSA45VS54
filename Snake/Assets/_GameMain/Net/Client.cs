@@ -121,38 +121,7 @@ namespace GameMain.Net
 			}
 		}
 
-		/// <summary>
-		/// 异步等待返回Response
-		/// </summary>
-		/// <param name="rpcId"></param>
-		/// <param name="cancellationToken"></param>
-		/// <returns></returns>
-		private async UniTask<IResponse> GetResponseAsync(int rpcId, CancellationToken? cancellationToken = null)
-		{
-			bool bo = false;
-			IResponse rsp = default;
-
-			this.requestCallback[rpcId] = (response) =>
-			{
-				try
-				{
-					rsp = response;
-					bo = true;
-				}
-				catch (Exception e)
-				{
-					Debug.LogError(e.Message);
-				}
-			};
-
-			if (cancellationToken.HasValue)
-			{
-				cancellationToken.Value.Register(() => this.requestCallback.Remove(rpcId));
-			}
-
-			await UniTask.WaitUntil(() => bo == true);
-			return rsp;
-		}
+		
 
 		/// <summary>
 		/// 发送Request
@@ -163,13 +132,38 @@ namespace GameMain.Net
 		public UniTask<IResponse> Call(IRequest request, CancellationToken? cancellationToken = null)
 		{
 			int rpcId = ++RpcId;
-
-			var res = GetResponseAsync(rpcId, cancellationToken);
-
+			var res = _Wrapper();
 			request.RpcId = rpcId;
 			this.SendRequestCore(request);
-
 			return res;
+
+			UniTask<IResponse> _Wrapper()
+			{
+				var utcs = new UniTaskCompletionSource<IResponse>();
+
+				this.requestCallback[rpcId] = (response) =>
+				{
+					try
+					{
+						utcs.TrySetResult(response);
+					}
+					catch (Exception e)
+					{
+						utcs.TrySetException(e);
+					}
+				};
+
+				if (cancellationToken.HasValue)
+				{
+					cancellationToken.Value.Register(() =>
+					{
+						this.requestCallback.Remove(rpcId);
+						utcs.TrySetCanceled();
+					});
+				}
+
+				return utcs.Task; //return UniTask<int>
+			}
 		}
 
 		private void SendRequestCore(IRequest msg)
@@ -231,7 +225,7 @@ namespace GameMain.Net
 			ProtocolBytes p = new ProtocolBytes();
 
 			var data = new S2C_LoginData { isPassed = true, msg = "Test", position = new Vector3(2, 3, 1) };
-			var test = new R2C_Login().ResponseSetData(data);
+			var test = new R2C_Login { data = data };
 			if (this.msgTypeMap.ContainsValue(test.GetType()))
 			{
 				var opcode = this.msgTypeMap.GetKeyByValue(test.GetType());

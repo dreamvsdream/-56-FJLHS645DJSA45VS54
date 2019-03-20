@@ -6,7 +6,7 @@ public class Player : MonoBehaviour
 
 	private async void Start()
 	{
-		await UniTask.WaitUntil(() => Init.ins.isInited == true);
+		await UniTask.WaitUntil(() => GameMain.Init.ins.isInited == true);
 
 		TestOne();
 	}

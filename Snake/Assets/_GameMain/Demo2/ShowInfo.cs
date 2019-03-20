@@ -16,7 +16,7 @@ public class ShowInfo : MonoBehaviour
 	// Start is called before the first frame update
 	private async void Start()
 	{
-		await UniTask.WaitUntil(() => Init.ins.isInited == true);
+		await UniTask.WaitUntil(() => GameMain.Init.ins.isInited == true);
 
 		ShowMyInfo();
 	}

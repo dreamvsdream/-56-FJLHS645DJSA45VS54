@@ -6,7 +6,7 @@ public class MyHelloWorld : MonoBehaviour
 	private string str = "this is gooood";
 	private async void Start()
 	{
-		await UniTask.WaitUntil(() => Init.ins.isInited == true);
+		await UniTask.WaitUntil(() => GameMain.Init.ins.isInited == true);
 
 		TestOne();
 		TestTwo();

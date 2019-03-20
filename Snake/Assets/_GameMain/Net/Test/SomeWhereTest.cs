@@ -1,6 +1,7 @@
 ﻿using System.Threading;
 using UnityEngine;
 using UniRx;
+using UniRx.Async;
 
 namespace GameMain.Net
 {
@@ -16,10 +17,7 @@ namespace GameMain.Net
 			Debug.Log("Send");
 			var data = new C2S_LoginData { account = "123", passwd = "456" };
 
-			CancellationTokenSource cts = new CancellationTokenSource();
-			Observable.TimerFrame(600).Subscribe(__=>cts.Cancel());
-
-			var r2cLogin = (R2C_Login)await Client.Instance.Call(new C2R_Login().RequestSetData(data), cts.Token);
+			var r2cLogin = (R2C_Login)await (Client.Instance.Call(new C2R_Login { data = data }).Timeout(System.TimeSpan.FromSeconds(1000)));
 
 			Debug.Log(r2cLogin.data.isPassed);
 			Debug.Log(r2cLogin.data.msg);
