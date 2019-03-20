@@ -17,12 +17,12 @@ using System.Threading;
 using UniRx;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
-#if USE_ADDRESSABLE
+#if Use_Addressable
 using UnityEngine.ResourceManagement;
+using UnityEngine.ResourceManagement.AsyncOperations;
 #endif
 namespace UniRx
 {
-	/*
 	public static class ObservableAddressables
 	{
 		/// <summary>Instantiate</summary>
@@ -57,7 +57,7 @@ namespace UniRx
 			observer.OnNext(obj);
 			observer.OnCompleted();
 		}
-#if USE_ADDRESSABLE
+#if Use_Addressable
         /// <summary>ReleaseInstance</summary>
         /// 
         public static void ReleaseAsset<T>(T obj) where T : UnityEngine.Object
@@ -65,7 +65,7 @@ namespace UniRx
             Addressables.ReleaseAsset<T>(obj);
         }
         /// <summary>ReleaseInstance</summary>
-        public static void ReleaseInstance(UnityEngine.Object obj, float delay = 0)
+        public static void ReleaseInstance(GameObject obj, float delay = 0)
         {
             Addressables.ReleaseInstance(obj, delay);
         }
@@ -127,20 +127,17 @@ namespace UniRx
             observer.OnCompleted();
         }
         /// <summary>Instantiate</summary>
-        public static System.IObservable<T> Instantiate<T>(object key, Transform parent = null, Action<IAsyncOperation<T>> onCompleted = null, bool isWorldSpace = false)
-        where T : UnityEngine.Object
+        public static System.IObservable<GameObject> Instantiate(object key, Transform parent = null, Action<IAsyncOperation<GameObject>> onCompleted = null, bool isWorldSpace = false)
         {
             // Addressables.Instantiate<T>(key)
-            return Observable.FromCoroutine<T>((observer, token) =>
+            return Observable.FromCoroutine<GameObject>((observer, token) =>
             {
                 return InstantiateCore(key, observer, token, parent, onCompleted, isWorldSpace);
             });
         }
-        private static IEnumerator InstantiateCore<T>(
-            object key, IObserver<T> observer, CancellationToken token, Transform parent = null, Action<IAsyncOperation<T>> onCompleted = null, bool isWorldSpace = false)
-        where T : UnityEngine.Object
+        private static IEnumerator InstantiateCore(object key, IObserver<GameObject> observer, CancellationToken token, Transform parent = null, Action<IAsyncOperation<GameObject>> onCompleted = null, bool isWorldSpace = false)
         {
-            var aop = Addressables.Instantiate<T>(key, parent, isWorldSpace);
+            var aop = Addressables.Instantiate(key, parent, isWorldSpace);
             if (onCompleted != null)
             {
                 aop.Completed += onCompleted;
@@ -159,21 +156,19 @@ namespace UniRx
 		/// <summary>Instantiate</summary>
 		
 		/// <summary>InstantiateAll</summary>
-		public static System.IObservable<IList<T>> InstantiateAll<T>(
-            object key, Transform parent = null, Action<IAsyncOperation<T>> onSingleCompleted = null, Action<IAsyncOperation<IList<T>>> onCompleted = null)
-        where T : UnityEngine.Object
+		public static System.IObservable<IList<GameObject>> InstantiateAll(
+            object key, Transform parent = null, Action<IAsyncOperation<GameObject>> onSingleCompleted = null, Action<IAsyncOperation<IList<GameObject>>> onCompleted = null)
         {
             // Addressables.Instantiate<T>(key)
-            return Observable.FromCoroutine<IList<T>>((observer, token) =>
+            return Observable.FromCoroutine<IList<GameObject>>((observer, token) =>
             {
-                return InstantiateAllCore<T>(key, observer, token, parent, onSingleCompleted, onCompleted);
+                return InstantiateAllCore(key, observer, token, parent, onSingleCompleted, onCompleted);
             });
         }
-        private static IEnumerator InstantiateAllCore<T>(
-            object key, IObserver<IList<T>> observer, CancellationToken token, Transform parent = null, Action<IAsyncOperation<T>> onSingleCompleted = null, Action<IAsyncOperation<IList<T>>> onCompleted = null)
-        where T : UnityEngine.Object
+        private static IEnumerator InstantiateAllCore(
+            object key, IObserver<IList<GameObject>> observer, CancellationToken token, Transform parent = null, Action<IAsyncOperation<GameObject>> onSingleCompleted = null, Action<IAsyncOperation<IList<GameObject>>> onCompleted = null)
         {
-            var aop = Addressables.InstantiateAll<T>(key, onSingleCompleted, parent);
+            var aop = Addressables.InstantiateAll(key, onSingleCompleted, parent);
             if (onCompleted != null)
             {
                 aop.Completed += onCompleted;
@@ -218,5 +213,4 @@ namespace UniRx
 		}
 #endif
 	}
-	 */
 }

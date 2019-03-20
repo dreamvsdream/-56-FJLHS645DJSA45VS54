@@ -77,7 +77,7 @@ public static class SerializeHelper
 	/// </summary>
 	/// <param name="structObj"></param>
 	/// <returns></returns>
-	public static byte[] StructToBytes<T>(T structObj) where T : struct
+	public static byte[] StructToBytes<T>(T structObj)
 	{
 		int size = Marshal.SizeOf(structObj);
 		IntPtr buffer = Marshal.AllocHGlobal(size);
@@ -102,7 +102,7 @@ public static class SerializeHelper
 	/// <param name="bytes"></param>
 	/// <param name="strcutType"></param>
 	/// <returns></returns>
-	public static T BytesToStruct<T>(byte[] bytes) where T : struct
+	public static T BytesToStruct<T>(byte[] bytes) 
 	{
 		var strcutType = typeof(T);
 		int size = Marshal.SizeOf(strcutType);

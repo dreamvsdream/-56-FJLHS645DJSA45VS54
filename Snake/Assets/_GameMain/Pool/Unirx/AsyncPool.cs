@@ -17,11 +17,10 @@ using System.Threading;
 using UniRx;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
-#if USE_ADDRESSABLE
+#if Use_Addressable
 using UnityEngine.ResourceManagement;
 #endif
-/*
-namespace NearyFrame
+namespace Roslyn
 {
 	public abstract class AsyncPool { }
 	/// <summary>
@@ -41,8 +40,8 @@ namespace NearyFrame
 		}
 
 		/// <summary>用referpath方式生成</summary>
-#if USE_ADDRESSABLE
-        public AsyncPool(string referPath, Func<IObservable<T>> createInstanceAsync = null, int maxCount = 1000)
+#if Use_Addressable
+		public AsyncPool(string referPath, Func<IObservable<T>> createInstanceAsync = null, int maxCount = 1000)
         {
             this.referPath = referPath;
             this.createInstanceAsync = createInstanceAsync??DefaultCreateInstanceAsync;
@@ -89,7 +88,7 @@ namespace NearyFrame
 		Queue<T> q;
 		public int MaxCount { get; set; }
 		protected GameObject prefab;
-#if USE_ADDRESSABLE
+#if Use_Addressable
         protected AssetReference refer;
 #endif
 		protected string referPath;
@@ -98,19 +97,20 @@ namespace NearyFrame
 		/// <summary>默认的生成方法</summary>
 		private IObservable<T> DefaultCreateInstanceAsync ( )
 		{
-#if USE_ADDRESSABLE
+#if Use_Addressable
             //  优先使用refer
             if (refer != null)
             {
-                return ObservableAddressables.Instantiate<GameObject>(refer, parent).Select(x => x.GetComponent<T>());
+                return ObservableAddressables.Instantiate(refer, parent).Select(x => x.GetComponent<T>());
             }
-            //  次先使用referPath
+			//  次先使用referPath
 #endif
-             if (referPath != null)
-            {
-				
-#if USE_ADDRESSABLE
-				return ObservableAddressables.Instantiate<GameObject>(referPath, parent).Select(x => x.GetComponent<T>());
+			if (referPath != null)
+			{
+
+#if Use_Addressable
+				return ObservableAddressables.Instantiate(referPath, parent).Select(x => x.GetComponent<T>());
+			}
 #else
 				return ObservableAddressables.ResInstantiate(referPath, parent).Select(x=>x.GetComponent<T>());
 			}
@@ -170,8 +170,8 @@ namespace NearyFrame
 
 			var go = instance.gameObject;
 			if (go == null) return;
-#if USE_ADDRESSABLE
-            Addressables.ReleaseInstance(instance);
+#if Use_Addressable
+            Addressables.ReleaseInstance(instance.gameObject);
 #else
 			UnityEngine.Object.Destroy(go);
 #endif
@@ -364,4 +364,3 @@ namespace NearyFrame
 	}
 
 }
- */

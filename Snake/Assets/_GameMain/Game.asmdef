@@ -8,7 +8,8 @@
         "UniRx.Async",
         "GameMain.Data",
         "GameMain.Helper",
-        "ThirdPartySafe"
+        "ThirdPartySafe",
+        "Plugins"
     ],
     "optionalUnityReferences": [],
     "includePlatforms": [],
