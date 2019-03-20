@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using GameMain.Net;
 
 //消息分发
 public class MsgDistribution
@@ -37,6 +38,8 @@ public class MsgDistribution
     //消息分发
     public void DispatchMsgEvent(ProtocolBase protocol)
     {
+		Client.Instance.OnReceiveMessage(protocol);
+
         string name = protocol.GetName();
         Debug.Log("分发处理消息 " + name);
         if (eventDict.ContainsKey(name))

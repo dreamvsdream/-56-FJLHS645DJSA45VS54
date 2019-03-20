@@ -250,8 +250,10 @@ namespace GameMain.Net
 		/// 接受Message
 		/// </summary>
 		/// <param name="bytes"></param>
-		public void OnReceiveMessage(ProtocolBytes bytes)
+		public void OnReceiveMessage(ProtocolBase proto)
 		{
+			ProtocolBytes bytes = (ProtocolBytes)proto;
+
 			var start = 0;
 			var opcode = bytes.GetInt(start, ref start);
 			//是message,交给对应msgHandler
